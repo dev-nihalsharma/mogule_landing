@@ -2,8 +2,18 @@
 import { useEffect } from 'react';
 import { motion, stagger, useAnimate } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { TypeAnimation } from 'react-type-animation';
+import Typewriter from 'typewriter-effect';
 
-export const TextGenerateEffect = ({ words, className }: { words: string; className?: string }) => {
+export const TextGenerateEffect = ({
+  words,
+  className,
+  stringsList,
+}: {
+  words: string;
+  className?: string;
+  stringsList: string[];
+}) => {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(' ');
   useEffect(() => {
@@ -15,7 +25,7 @@ export const TextGenerateEffect = ({ words, className }: { words: string; classN
       },
       {
         duration: 2,
-        delay: stagger(0.2),
+        delay: stagger(0.1),
       }
     );
   }, [scope.current]);
@@ -28,7 +38,7 @@ export const TextGenerateEffect = ({ words, className }: { words: string; classN
             <motion.span
               key={word + idx}
               // change here if idx is greater than 3, change the text color to #f9bdac
-              className={` ${idx > 1 ? 'text-[#f9bdac]' : 'dark:text-white text-black'} opacity-0`}
+              className='dark:text-white text-black opacity-0'
             >
               {word}{' '}
             </motion.span>
@@ -43,7 +53,20 @@ export const TextGenerateEffect = ({ words, className }: { words: string; classN
       {/* mt-4 to my-4 */}
       <div className='my-4'>
         {/* remove  text-2xl from the original */}
-        <div className=' dark:text-white text-black leading-snug tracking-wide'>{renderWords()}</div>
+        <div className='flex flex-col text-[#f9bdac]  leading-snug tracking-wide'>
+          {renderWords()}
+          <span className='text-[70px] md:text-5xl lg:text-6xl mt-4 font-bold '>
+            <Typewriter
+              options={{
+                strings: stringsList,
+                delay: 50,
+                deleteSpeed: 25,
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </span>
+        </div>
       </div>
     </div>
   );

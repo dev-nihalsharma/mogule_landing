@@ -1,6 +1,5 @@
-import { FaLocationArrow } from 'react-icons/fa6';
-
-import { socialMedia } from '@/data';
+import { emails, socialMedia } from '@/data';
+import { IoMail } from 'react-icons/io5';
 import MagicButton from './MagicButton';
 
 const Footer = () => {
@@ -18,8 +17,8 @@ const Footer = () => {
         <p className='text-white-200 md:mt-10 my-5 text-center'>
           Reach out to us today and let&apos;s discuss how we can help you achieve your goals.
         </p>
-        <a href='mailto:contact@jsmastery.pro'>
-          <MagicButton title='Email Us' icon={<FaLocationArrow />} position='right' />
+        <a href={`mailto:${emails.mogulePrivateMale}`}>
+          <MagicButton title='Email Us' icon={<IoMail />} position='right' />
         </a>
       </div>
       <div className='flex mt-16 md:flex-row flex-col justify-between items-center'>
@@ -27,11 +26,15 @@ const Footer = () => {
 
         <div className='flex items-center md:gap-3 gap-6 sm:mt-3'>
           {socialMedia.map((info) => (
-            <a key={info.id} href={info.link} target='_blank' rel='noopener noreferrer'>
-              <div className='w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300'>
-                <img src={info.img} alt='icons' width={20} height={20} />
-              </div>
-            </a>
+            <div
+              key={info.id}
+              onClick={() => {
+                window.open(info.link, '_blank', 'noopener,noreferrer');
+              }}
+              className='w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300'
+            >
+              <img src={info.img} alt='icons' width={20} height={20} />
+            </div>
           ))}
         </div>
       </div>

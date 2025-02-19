@@ -272,16 +272,36 @@ export const socialMedia = [
   {
     id: 1,
     img: '/insta.svg',
-    link: 'instagram.com/mogulemedia',
+    link: 'https://www.instagram.com/mogulemedia',
   },
   {
     id: 2,
     img: '/twit.svg',
-    link: 'linkedin.com/company/mogulemedia',
+    link: 'https://www.linkedin.com/company/mogulemedia',
   },
   {
     id: 3,
     img: '/link.svg',
-    link: 'linkedin.com/company/mogulemedia',
+    link: 'https://www.linkedin.com/company/mogulemedia',
   },
 ];
+
+export const servicesList = [
+  'Web Development',
+  'Android & iOS Dev',
+  'Premium Shopify Stores',
+  'Google Ads',
+  'Facebook Ads',
+  '6x ROAS Campaigns',
+  'SEO Solutions',
+  'Email Marketing',
+];
+
+export const emails = {
+  moguleGmail: 'mogulemedia@gmail.com',
+  mogulePrivateMale: 'contact@mogul-e.com',
+  nihalGmail: 'itsnihal.sharma@gmail.com',
+  nikhilGmail: 'marketingwithnikhil@gmail.com',
+};
+
+export const emailTemplate = '<p></p>';

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import MagicButton from './MagicButton';
 import { Spotlight } from './ui/Spotlight';
 import { TextGenerateEffect } from './ui/TextGenerateEffect';
+import { servicesList } from '@/data';
 
 const Hero = () => {
   return (
@@ -42,10 +43,11 @@ const Hero = () => {
           </p>
           <TextGenerateEffect
             words='Scaling Businesses faster with'
-            className='text-start text-[40px] md:text-5xl lg:text-6xl'
+            className='text-start text-[40px] md:text-3xl lg:text-3xl font-normal'
+            stringsList={servicesList}
           />
 
-          <p className=' md:tracking-wider mb-4 text-s md:text-md lg:text-md'>
+          <p className=' md:tracking-wider mb-4 text-s md:text-md lg:text-md font-light'>
             We help D2C & B2B businesses launch, boost customers, and increase revenue within 90 Days
           </p>
 
