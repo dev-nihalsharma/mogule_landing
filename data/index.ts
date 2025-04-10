@@ -178,33 +178,33 @@ export const webAppDevProjects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Mogul-e Media was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mogul-e Media's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Mogul-e Media is the ideal partner.",
+      "Collaborating with Mogul-e Media was an absolute pleasure. There professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mogul-e Media's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Mogul-e Media is the ideal partner.",
     name: 'Aditya Raj',
-    title: 'Founder of Zimyo',
+    title: 'Founder of BuyMeBooks',
   },
   {
     quote:
-      "Collaborating with Mogul-e Media was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mogul-e Media's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Mogul-e Media is the ideal partner.",
-    name: 'Michael Johnson',
-    title: 'Director of AlphaStream Technologies',
+      'Working with MogulE Media has been an absolute game-changer for our business. From the very first conversation, their team demonstrated a deep understanding of web development, UI/UX design, and how to bring our vision to life with clarity and precision.',
+    name: 'Sunit R.',
+    title: 'Co-Founder and CEO of Amilwa ',
   },
   {
     quote:
-      "Collaborating with Mogul-e Media was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mogul-e Media's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Mogul-e Media is the ideal partner.",
-    name: 'Michael Johnson',
-    title: 'Director of AlphaStream Technologies',
+      'Working with MogulE Media was a fantastic experience. They delivered a sleek and functional e-commerce website that exceeded our expectations. The team was professional, responsive, and attentive to our needs, ensuring a smooth development process',
+    name: 'Bhavesh K.',
+    title: 'Founder of Drapper ',
   },
   {
     quote:
-      "Collaborating with Mogul-e Media was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mogul-e Media's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Mogul-e Media is the ideal partner.",
-    name: 'Michael Johnson',
-    title: 'Director of AlphaStream Technologies',
+      "MogulE Media did an outstanding job developing our mobile app. The team was highly skilled and attentive, delivering a user-friendly and innovative app that perfectly meets our needs. Their professionalism and timely communication made the process seamless. We've received excellent feedback from users and have seen increased engagement since the launch. I highly recommend MogulE Media for anyone looking to develop a top-notch mobile app.",
+    name: 'Suraj K.',
+    title: 'Founder & CEO of mSorted By Money Merchants',
   },
   {
     quote:
-      "Collaborating with Mogul-e Media was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mogul-e Media's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Mogul-e Media is the ideal partner.",
-    name: 'Michael Johnson',
-    title: 'Director of AlphaStream Technologies',
+      'MogulE Media did a fantastic job on our mobile app. The team was professional and easy to work with, delivering a great product that our users love. Highly recommend their services!',
+    name: 'Karan S.',
+    title: 'Founder of Vanaura Organics',
   },
 ];
 

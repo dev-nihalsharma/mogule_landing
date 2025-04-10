@@ -60,7 +60,7 @@ const GetAQuote = () => {
           from: 'onboarding@resend.dev',
           to: emails.moguleGmail,
           subject: `New Requirements Form Submission by ${name}`,
-          htmlBody: `<h3>Name: ${name}</h3><h3>Email: ${email}</h3><h3>Email: ${mobile}</h3><p>Requirements: ${requirements}</p>`,
+          htmlBody: `<h3>Name: ${name}</h3><h3>Email: ${email}</h3><h3>Mobile: ${mobile}</h3><p>Requirements: ${requirements}</p>`,
           attachments,
         }),
       });
