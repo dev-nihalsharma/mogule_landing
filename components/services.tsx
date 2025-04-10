@@ -7,7 +7,7 @@ import { FaLocationArrow } from 'react-icons/fa6';
 
 const Services = () => {
   return (
-    <section id='services' className='py-20 w-full flex flex-col items-center'>
+    <section id='services' className='py-20  w-full flex flex-col items-center'>
       <h1 className='heading'>
         Our <span className='text-purple'>Services</span>
       </h1>

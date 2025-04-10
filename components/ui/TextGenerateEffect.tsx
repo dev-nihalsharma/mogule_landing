@@ -55,7 +55,7 @@ export const TextGenerateEffect = ({
         {/* remove  text-2xl from the original */}
         <div className='flex flex-col text-[#f9bdac]  leading-snug tracking-wide'>
           {renderWords()}
-          <span className='text-[70px] md:text-5xl lg:text-6xl mt-4 font-bold '>
+          <span className='text-[40px] md:text-5xl lg:text-6xl mt-4 font-bold '>
             <Typewriter
               options={{
                 strings: stringsList,

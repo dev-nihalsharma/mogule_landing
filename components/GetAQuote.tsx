@@ -100,7 +100,7 @@ const GetAQuote = () => {
       <form
         onSubmit={handleSubmit}
         encType='multipart/form-data; boundry=--'
-        className='flex flex-col relative items-start border w-full md:w-[80%]  lg:w-[80%] lg:min-h-[70vh] md:min-h-[70vh]  min-h-[73vh] p-5 md:p-10 lg:p-10 mt-5 pb-4 rounded-lg'
+        className='flex flex-col relative items-start border w-full md:w-[80%]  lg:w-[80%] lg:min-h-[70vh] md:min-h-[70vh]  min-h-[83vh] p-5 md:p-10 lg:p-10 mt-5 pb-4 rounded-lg'
       >
         <div className='flex  lg:space-x-4 md:space-x-4 max-sm:space-y-4 flex-col md:flex-row lg:flex-row items-center justify-between w-full'>
           <div className='flex flex-col lg:space-y-2 md:space-y-2 w-full'>
