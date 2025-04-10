@@ -67,7 +67,7 @@ const OurPortfolio = () => {
         {currentTab === 'shopify' && shopfiyProjects.map((item) => <PortfolioCard key={item.id} item={item} />)}
         {currentTab === 'web-app-dev' && webAppDevProjects.map((item) => <PortfolioCard key={item.id} item={item} />)}
         {currentTab === 'paid-ads' && (
-          <div className='flex border gap-6 w-full h-[400px] max-sm:h-[80vh] max-md:h-[80vh] max-[1300px]:h-[60vh] rounded-3xl p-10 max-md:flex-col max-sm:gap-5 max-sm:items-center max-sm:justify-center'>
+          <div className='flex border gap-6 w-full h-[400px] max-sm:h-[80vh] max-md:h-[80vh] max-[1300px]:h-[60vh] rounded-3xl p-10 max-sm:p-5 max-md:flex-col max-sm:gap-5  '>
             <img src='/paid-ads.png' alt='paid-ads-bg' className='rounded-3xl w-[500px]' />
             <div className='flex flex-col gap-5 items-start'>
               <h1 className='text-3xl max-md:text-2xl font-bold text-white max-sm:text-center'>
@@ -88,7 +88,7 @@ const OurPortfolio = () => {
                 className='text-sm p-4 text-gray-500 bg-orange-50 bg-opacity-20 max-sm:text-center'
                 onClick={() =>
                   window.open(
-                    'https://docs.google.com/document/d/1mrci3puF_U8Q1bfHxBNlIl9TzsYXgxVe17BQBIZ1kas/edit?usp=sharing',
+                    'https://drive.google.com/file/d/1ueMIodclmEAbJnyHei7xHSYMGbgiTtxS/view?usp=sharing',
                     '_blank'
                   )
                 }
