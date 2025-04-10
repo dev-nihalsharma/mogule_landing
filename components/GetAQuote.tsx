@@ -173,7 +173,7 @@ const GetAQuote = () => {
             {isSubmitting ? <p>Sending...</p> : <p>Submit</p>}
           </button>
         </div>
-        <div className='absolute bottom-5 flex flex-col space-y-2 '>
+        <div className='sm:absolute max-sm:mt-4 bottom-5 flex flex-col space-y-2 '>
           <div className='flex flex-col space-y-1'>
             <p className='flex md:text-xs text-xs md:font-normal font-thin text-end text-gray-500 '>
               <IoMail color='#FD5690' size={14} className='mr-2' />

@@ -8,7 +8,7 @@ import { servicesList } from '@/data';
 
 const Hero = () => {
   return (
-    <div id='hero' className='lg:pb-20 max-sm:h-[80vh] pt-36'>
+    <div id='hero' className='lg:pb-20 max-sm:h-[85vh] pt-36'>
       <div>
         <Spotlight className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen' fill='white' />
         <Spotlight className='h-[80vh] w-[50vw] top-10 left-full' fill='purple' />
@@ -16,7 +16,7 @@ const Hero = () => {
       </div>
 
       <div
-        className='h-[80vh] lg:md:h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
+        className='h-[90vh] lg:md:h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
        absolute top-0 left-0 flex items-center justify-center'
       >
         <div

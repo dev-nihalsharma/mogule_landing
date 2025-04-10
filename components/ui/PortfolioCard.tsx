@@ -15,7 +15,7 @@ const PortfolioCard = ({ item }: { item: any }) => {
           <div className='relative w-full h-full overflow-hidden lg:rounded-3xl' style={{ backgroundColor: '#13162D' }}>
             <img src='/bg.png' alt='bgimg' />
           </div>
-          <img src={item.img} alt='image' className='z-10 h-full rounded-3xl absolute bottom-0' />
+          <img src={item.img} alt='image' className='z-10  h-full rounded-3xl absolute bottom-0' />
         </div>
 
         <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>{item.title}</h1>
