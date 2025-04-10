@@ -11,6 +11,7 @@ import { FloatingNav } from '@/components/ui/FloatingNavbar';
 import Services from '@/components/services';
 import Grid2 from '@/components/Grid2';
 import GetAQuote from '@/components/GetAQuote';
+import VideoTestimonial from '@/components/VideoTestimonial';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <div className='max-w-7xl w-full'>
         <FloatingNav navItems={navItems} />
         <Hero />
+        {/* <VideoTestimonial /> */}
         <Services />
         <Grid1 />
         <OurPortfolio />

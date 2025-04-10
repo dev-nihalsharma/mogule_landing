@@ -1,8 +1,11 @@
-import { Attachment, sendEmail } from '@/app/server/resend';
+import { Attachment } from '@/app/api/contact-us/route';
 import { emails } from '@/data';
+
 import React, { useState } from 'react';
 import { FaPhone } from 'react-icons/fa6';
 import { IoMail } from 'react-icons/io5';
+
+import { toastError, toastSuccess } from './ui/toaster';
 
 370;
 
@@ -19,8 +22,10 @@ function _arrayBufferToBase64(buffer: any) {
 const GetAQuote = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [mobile, setMobile] = useState('');
   const [requirements, setRequirements] = useState('');
   const [attachments, setAttachments] = useState<Attachment[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
@@ -37,14 +42,48 @@ const GetAQuote = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    // await sendEmail(
-    //   'onboarding@resend.dev',
-    //   [emails.moguleGmail],
-    //   `New Requirements Form Submission by ${name}`,
-    //   `<h3>Name: ${name}</h3><h3>Email: ${email}</h3><p>Requirements: ${requirements}</p>`,
-    //   attachments
-    // );
+    if (!name || !email || !requirements) {
+      toastError('Please fill in all fields');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/contact-us', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: 'onboarding@resend.dev',
+          to: emails.moguleGmail,
+          subject: `New Requirements Form Submission by ${name}`,
+          htmlBody: `<h3>Name: ${name}</h3><h3>Email: ${email}</h3><h3>Email: ${mobile}</h3><p>Requirements: ${requirements}</p>`,
+          attachments,
+        }),
+      });
+      if (!res.ok) {
+        toastError('Error sending email');
+
+        console.error('Error sending email:', res.statusText);
+        return;
+      } else {
+        toastSuccess('Email sent successfully');
+        console.log('Email sent successfully');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    } finally {
+      setIsSubmitting(false);
+
+      setName('');
+      setEmail('');
+      setMobile('');
+      setRequirements('');
+      setAttachments([]);
+    }
   };
 
   return (
@@ -61,7 +100,7 @@ const GetAQuote = () => {
       <form
         onSubmit={handleSubmit}
         encType='multipart/form-data; boundry=--'
-        className='flex flex-col relative items-start border w-full md:w-[80%]  lg:w-[80%] lg:min-h-[70vh] md:min-h-[70vh] min-h-[72vh] p-5 md:p-10 lg:p-10 mt-5 pb-4 rounded-lg'
+        className='flex flex-col relative items-start border w-full md:w-[80%]  lg:w-[80%] lg:min-h-[70vh] md:min-h-[70vh]  min-h-[73vh] p-5 md:p-10 lg:p-10 mt-5 pb-4 rounded-lg'
       >
         <div className='flex  lg:space-x-4 md:space-x-4 max-sm:space-y-4 flex-col md:flex-row lg:flex-row items-center justify-between w-full'>
           <div className='flex flex-col lg:space-y-2 md:space-y-2 w-full'>
@@ -88,6 +127,18 @@ const GetAQuote = () => {
               className='border rounded-lg bg-transparent focus:border-[#ffd6c99a] text-sm focus:border-2 focus:outline-none focus:ring-0 p-3 px-4'
             />
           </div>
+          <div className='flex flex-col lg:space-y-2 md:space-y-2 w-full'>
+            <label htmlFor='name'>Mobile Number</label>
+            <input
+              type='number'
+              id='mobile'
+              name='mobile'
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
+              placeholder='Your Mobile'
+              className='border rounded-lg bg-transparent focus:border-[#ffd6c99a] text-sm focus:border-2 focus:outline-none focus:ring-0 p-3 px-4'
+            />
+          </div>
         </div>
         <div className='flex flex-col space-y-2 mt-4 w-full'>
           <label htmlFor='requirements'>Requirements</label>
@@ -103,7 +154,7 @@ const GetAQuote = () => {
           ></textarea>
         </div>
         <div className='flex  space-x-2 mt-4'>
-          <input
+          {/* <input
             type='file'
             multiple
             accept='.pdf, .docx, .jpg, .png, .xlsx'
@@ -111,15 +162,18 @@ const GetAQuote = () => {
             onChange={handleFileUpload}
             className='bg-transparent'
             placeholder='attach files'
-          />
-          <button type='button' className='border  text-black dark:text-white rounded-lg p-2 px-4  mt-4'>
+          /> */}
+          {/* <button type='button' className='border  text-black dark:text-white rounded-lg p-2 px-4  mt-4'>
             <span className='text-xs'>Attach Files</span>
-          </button>
-          <button type='submit' className='bg-[#FD5690] text-xs text-black dark:text-white rounded-lg p-2 px-4 mt-4'>
-            Submit
+          </button> */}
+          <button
+            type='submit'
+            className='bg-[#FD5690] text-xs text-black dark:text-white rounded-lg p-3 w-[100px] mt-4 hover:bg-[#fd5690b3] transition-all duration-200 ease-in-out'
+          >
+            {isSubmitting ? <p>Sending...</p> : <p>Submit</p>}
           </button>
         </div>
-        <div className='absolute bottom-5 flex flex-col space-y-2'>
+        <div className='absolute bottom-5 flex flex-col space-y-2 '>
           <div className='flex flex-col space-y-1'>
             <p className='flex md:text-xs text-xs md:font-normal font-thin text-end text-gray-500 '>
               <IoMail color='#FD5690' size={14} className='mr-2' />
