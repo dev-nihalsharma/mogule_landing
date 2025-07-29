@@ -181,7 +181,7 @@ const GetAQuote = () => {
             </p>
             <p className='flex md:text-xs text-xs md:font-normal font-thin text-end text-gray-500'>
               <FaPhone color='#FD5690' size={14} className='mr-2' />
-              +91 7053904411 | +91 7053903377
+              +91 7053904411
             </p>
           </div>
         </div>
